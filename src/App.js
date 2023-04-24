@@ -16,8 +16,8 @@ function App() {
   return (
     <div className="App">    
       <p>Parent Component</p>
-      <br /><br />
-      <ComponentOne handleOpenModal={handleOpenModal} />
+      <button onClick={handleOpenModal}>Click</button>
+      {/* <ComponentOne handleOpenModal={handleOpenModal} />s */}
       <ComponentTwo ref={modalRef} />      
     </div>
   );

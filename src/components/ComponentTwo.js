@@ -3,16 +3,17 @@ import { forwardRef, useImperativeHandle, useState } from "react";
 const ComponentTwo = (props,ref) => {
     const [modalState, setModalState] = useState(false);
 
-    const switchSate = () =>{
-        if(!modalState){
-            setModalState(true);
-        }else {
-            setModalState(false)
-        }
-    }
+    // const switchSate = () =>{
+    //     if(!modalState){
+    //         setModalState(true);
+    //     }else {
+    //         setModalState(false)
+    //     }
+    // }
 
     useImperativeHandle(ref, () =>({
-        openModal: () => switchSate()
+        // openModal: () => switchSate()
+        openModal: () => setModalState(true)
     }));
 
     console.log('child rendered',modalState);
@@ -22,7 +23,7 @@ const ComponentTwo = (props,ref) => {
   return (
     <div>
         <p>ComponentTwo</p>
-        {/* <button onClick={()=>setModalState(false)}>Close</button> */}
+        <button onClick={()=>setModalState(false)}>Close</button>
     </div>
   )
 }
